@@ -1,0 +1,10 @@
+[Unit]
+Description=Fix for iwlwifi locking up computer
+Requires=network-online.target
+
+[Service]
+ExecStart=/usr/sbin/setpci -s 09:00.0 0x50.B=0x40
+Type=simple
+
+[Install]
+WantedBy=graphical.target
