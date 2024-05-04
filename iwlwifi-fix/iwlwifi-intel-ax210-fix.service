@@ -4,8 +4,8 @@ Requires=network-online.target
 
 [Service]
 # The values for 0x50.B=0x40 are static
-# To obtain the value for 09:00.0 run the following command, substituting 'fedora kerbal' for a string appropriate to your system:
-# journalctl -b | grep iwlwifi | grep 'fedora kernel' | tail -n 1 | cut -d' ' -f7 | cut -d':' -f2,3
+# To obtain the value for 09:00.0 run the following command, substituting 'fedora kernal' for a string appropriate to your system:
+# lspci | grep AX210 | cut -d' ' -f1
 ExecStart=/usr/sbin/setpci -s 09:00.0 0x50.B=0x40
 Type=simple
 
